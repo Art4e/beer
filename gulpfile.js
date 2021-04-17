@@ -49,10 +49,15 @@ const path = {
     scripts: `source/js/index.js`,//В стилях и скриптах нам понадобятся только main файлы
     style: [
       `source/css/normalize.css`,
+      `source/css/swiper-bundle.min.css`,
+      `source/css/utilities.css`,
+      `source/css/wave-style.css`,
       `source/css/style.css`,
       `source/css/header.css`,
-      `source/css/section.css`,
-      `source/css/footer.css`
+      `source/css/hero.css`,
+      `source/css/beer-map.css`,
+      `source/css/footer.css`,
+      `source/css/media.css`
     ],
     img: [
       `source/img/**/*.png`,
@@ -132,7 +137,7 @@ const scripts = () => {
     .pipe(gulpif(!argv.build, sourceMaps.init()))
     .pipe(rigger())
     .pipe(babel({
-      presets: [ `@babel/env` ]
+      presets: [`@babel/env`]
     }))
     .pipe(gulpif(argv.build, uglify().on(`error`, notify.onError())))
     .pipe(gulpif(!argv.build, sourceMaps.write()))
@@ -198,7 +203,7 @@ const webps = () => {
 
 // -------- Удаляем папки dev и build прежде чесм собрать обновлённую сборку
 const delAll = () => {
-  return del([ path.clean.dev, path.clean.build ])
+  return del([path.clean.dev, path.clean.build])
 }
 
 // -------- Следим за изменениями в файлах

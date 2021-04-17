@@ -1,8 +1,10 @@
 ; (() => {
 
-
-
   document.addEventListener(`DOMContentLoaded`, () => {
+
+    //= modules/utilities.js
+    //= modules/wave.js.js
+    //= modules/swiper-bundle.min.js
 
     const swiper = new Swiper(`.swiper-container`, {
       loop: true,
