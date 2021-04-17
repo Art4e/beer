@@ -48,22 +48,14 @@ const path = {
     html: `source/*.html`, //Синтаксис source/*.html говорит gulp что мы хотим взять все файлы с расширением .html
     scripts: `source/js/index.js`,//В стилях и скриптах нам понадобятся только main файлы
     style: [
-      `source/css/normalize.css`,
-      `source/css/swiper-bundle.min.css`,
-      `source/css/utilities.css`,
-      `source/css/wave-style.css`,
-      `source/css/style.css`,
-      `source/css/header.css`,
-      `source/css/hero.css`,
-      `source/css/beer-map.css`,
-      `source/css/footer.css`,
+      `source/css/index.css`,
       `source/css/media.css`
     ],
     img: [
       `source/img/**/*.png`,
       `source/img/**/*.jpg`,
       `source/img/**/*.jpeg`,
-      `source/img/*.svg`,
+      `source/img/*.svg`
     ], //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
     webp: `source/img/**/*.webp`,
     svg: `source/img/svg/*.svg`,
@@ -118,7 +110,9 @@ const htmlMinify = () => {
 // -------- Обработка стилей
 const styles = () => {
   return src(path.source.style)
-    .pipe(gulpif(!argv.build, sourceMaps.init()))
+    // .pipe(gulpif(!argv.build, sourceMaps.init()))
+    .pipe(gulpif(path.source.style[0], rigger()))
+    // .pipe(rigger())
     .pipe(concat('main.css'))
     .pipe(autoPrefixer({
       cascade: false
@@ -126,7 +120,7 @@ const styles = () => {
     .pipe(gulpif(argv.build, cleanCss({
       level: 2
     })))
-    .pipe(gulpif(!argv.build, sourceMaps.write()))
+    // .pipe(gulpif(!argv.build, sourceMaps.write()))
     .pipe(gulpif(argv.build, dest(path.build.style), dest(path.dev.style)))
     .pipe(browserSync.stream())
 }

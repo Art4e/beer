@@ -119,7 +119,7 @@
   const modalOverlay = document.querySelector(`.modal-overlay `);
   const modals = document.querySelectorAll(`.modal`);
 
-  removeVisibleClass = (modalsAll) => {
+  const removeVisibleClass = (modalsAll) => {
     modalsAll.forEach((el) => { el.classList.remove(`modal--visible`) });
   };
 
