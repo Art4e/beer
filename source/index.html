@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Компания - Дай ЛЕЩА. Пиво и т.п.  ">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/wave-style.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+
+  <link rel="stylesheet" href="css/beer-map.css">
+
+  <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="stylesheet" href="css/media.css">
+
+  <script defer src="./js/utilities.js"></script>
+  <script defer src="./js/wave.js"></script>
+  <script defer src="./js/swiper-bundle.min.js"></script>
+  <script defer src="./js/index.js"></script>
+
+  <title>Дай леща!</title>
+</head>
+
+<body>
+  <!-- ************** -->
+  <!-- модальные окна -->
+  <div class="modals">
+    <div class="modal-overlay">
+      <div class="modal js-modal__start">
+        <div class="modal__logo">
+          <svg class="modal__img" viewBox="0 0 125 56">
+            <use xlink:href="./img/sprites.svg#logo"></use>
+          </svg>
+        </div>
+        <p class="modal__text">Вам испольнилось 18 лет?</p>
+        <div class="modal__btn-group">
+          <a class="modal__link modal__btn" href="#">да</a>
+          <a class="modal__link" href="http://wwww.yandex.ru" target="_self">нет</a>
+        </div>
+      </div>
+      <!-- <div class="modal modal--1" data-target="form-popup">
+				Окно 1
+			</div>
+			<div class="modal modal--2" data-target="me-popup">
+				Окно 2
+			</div> -->
+    </div>
+  </div>
+
+  <!-- ********************* -->
+  <!-- Слайдер на 1-м экране -->
+  <div class="container-swiper">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" data-namber-item="0">
+          <div class="swiper-zoom-container head-bg__slide head-bg__slide_01" data-namber-item="0">
+          </div>
+        </div>
+        <div class="swiper-slide" data-namber-item="1">
+          <div class="swiper-zoom-container head-bg__slide head-bg__slide_02" data-namber-item="1">
+          </div>
+        </div>
+        <div class="swiper-slide" data-namber-item="2">
+          <div class="swiper-zoom-container head-bg__slide head-bg__slide_03" data-namber-item="2">
+          </div>
+        </div>
+        <div class="swiper-slide" data-namber-item="3">
+          <div class="swiper-zoom-container head-bg__slide head-bg__slide_04" data-namber-item="3">
+          </div>
+        </div>
+        <div class="swiper-slide" data-namber-item="4">
+          <div class="swiper-zoom-container head-bg__slide head-bg__slide_05" data-namber-item="4">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-white"></div>
+  </div>
+
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <a class="logo__link " href="#">
+          <svg class="logo__img" viewBox="0 0 125 56">
+            <use xlink:href="./img/sprites.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="header__menu js-burger-open">
+        <ul class="header__social-net social-net">
+          <li class="social-net__item">
+            <a class="social-net__link  modal__btn" href="#" target="_self">
+              <svg class="social-net__icon" viewBox="0 0 26 26">
+                <use xlink:href="./img/sprites.svg#vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-net__item">
+            <a class="social-net__link" href="#" target="_self">
+              <svg class="social-net__icon" viewBox="0 0 26 26">
+                <use xlink:href="./img/sprites.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-net__item">
+            <a class="social-net__link" href="#" target="_self">
+              <svg class="social-net__icon" viewBox="0 0 26 26">
+                <use xlink:href="./img/sprites.svg#fb"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="header__contacts">
+          <a class="header__tel-link" href="tel:+78007007070">+7 (800) 700-70-70</a>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__items">
+            <li class="header__item">
+              <a class="header__link" href="#" target="_self" data-goto=".abaut-us">
+                О нас
+              </a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#" target="_self" data-goto=".beer-map">
+                Пивная карта
+              </a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#" target="_self" data-goto=".points-sale">
+                Точки продажи
+              </a>
+            </li>
+            <li class="header__item_spaсe"></li>
+            <li class="header__item">
+              <a class="header__link" href="#" target="_self" data-goto=".feedback">
+                Обратная связь
+              </a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#" target="_self" data-goto=".contacts">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <button class="header__burger js-header__burger" aria-label="Навигация сайта">
+        <span class="burger__body"></span>
+      </button>
+    </div>
+  </header>
+  <section class="section hero">
+    <div class="hero__container container ">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-wrapper">
+        <div class="hero__body swiper-slide" data-element-tab="">
+          <h2 class="hero__header">
+            Чтото КРУТОЕ о пиве
+          </h2>
+          <p class="hero__text paragraph">
+            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <a class="hero__link" href="#" target="_self" data-btn-wave="true">
+            Жми сюда
+          </a>
+        </div>
+        <div class="hero__body swiper-slide" data-element-tab="">
+          <h2 class="hero__header">
+            Философия о вечном
+          </h2>
+          <p class="hero__text paragraph">
+            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <a class="hero__link" href="#" target="_self" data-btn-wave="true">
+            Жми сюда1
+          </a>
+        </div>
+        <div class="hero__body swiper-slide" data-element-tab="">
+          <h2 class="hero__header">
+            Труд всему голова
+          </h2>
+          <p class="hero__text paragraph">
+            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <a class="hero__link" href="#" target="_self" data-btn-wave="true">
+            Жми сюда2
+          </a>
+        </div>
+        <div class="hero__body swiper-slide" data-element-tab="">
+          <h2 class="hero__header">
+            Кто работает тот и пьёт
+          </h2>
+          <p class="hero__text paragraph">
+            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <a class="hero__link" href="#" target="_self" data-btn-wave="true">
+            Жми сюда3
+          </a>
+        </div>
+        <div class="hero__body swiper-slide" data-element-tab="">
+          <h2 class="hero__header">
+            Крафтовое пиво
+          </h2>
+          <p class="hero__text paragraph">
+            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+          </p>
+          <a class="hero__link" href="#" target="_self" data-btn-wave="true">
+            Жми сюда4
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section container" style="font-size: 2rem;">
+    <h2></h2>
+    Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты. Всемогущая парадигматическая
+    страну своих рекламных напоивший грустный родного заманивший текстов пояс она ему осталось необходимыми заголовок
+    прямо переулка свой мир пустился повстречался, буквенных первую живет. Сбить, деревни подпоясал назад он lorem, меня
+    инициал точках она журчит которой, грамматики пор. Сбить выйти снова маленькая парадигматическая большой. Грустный
+    ее инициал она реторический выйти которой дорогу всеми взгляд то, путь подзаголовок его бросил ipsum встретил,
+    власти эта продолжил снова имени семь но. Большого собрал точках знаках пор букв, своего парадигматическая агентство
+    вскоре. Его щеке свой рукопись ты лучше заголовок букв раз все за сбить ее текста речью всеми, маленький своих
+    приставка переписывается запятой инициал, алфавит прямо океана, великий наш даль. Решила имеет, коварный
+    безорфографичный выйти щеке букв родного не большого гор злых лучше то ее ручеек парадигматическая использовало
+    текстами себя свой? Там свою грамматики рыбными ее которой буквоград безопасную свое коварный, на берегу пустился
+    жизни но единственное раз гор всемогущая речью залетают эта это возвращайся строчка последний подпоясал решила
+    грустный сих. Строчка ее щеке вдали это послушавшись родного заглавных предложения гор! Образ сбить назад проектах
+    даже? Решила маленький предупредила единственное, выйти живет, по всей всемогущая переписывается вскоре, жаренные
+    дорогу языком! Взгляд рукописи послушавшись большого но над щеке пор живет пустился переписали, заглавных, рот
+    своих! Вдали оксмокс последний образ решила, грамматики своего переулка алфавит языком, маленькая ее семантика злых
+    толку гор раз города все вскоре имени инициал пунктуация, вопрос подпоясал обеспечивает составитель дал страна.
+    Запятой лучше залетают коварный подзаголовок приставка силуэт толку повстречался эта, океана точках гор ты
+    безопасную рот необходимыми запятых ipsum прямо грустный своих дороге они предложения. Lorem ipsum ведущими имени
+    пустился сбить всеми продолжил бросил, наш прямо речью однажды. Lorem которой образ моей рыбными повстречался
+    напоивший пустился агентство даль правилами. Рыбными возвращайся что семь всемогущая большой которой страна первую.
+    Дал ручеек lorem себя.
+  </section>
+  <section class="section container abaut-us">
+    <h2>abaut-us</h2>
+    Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Если курсивных рукопись над
+    переписали живет ведущими, рекламных пояс на берегу домах образ ее толку продолжил родного запятой своих раз
+    осталось коварный свое? Встретил наш маленькая своих, продолжил вопрос скатился? Встретил, на берегу, эта знаках
+    вершину коварных последний послушавшись предупреждал ведущими предложения приставка, гор маленький всеми? Рот они
+    однажды всеми имеет на берегу все океана деревни имени скатился рукописи но своего переписывается собрал города
+    последний коварных, вскоре не, образ рыбными послушавшись пояс букв! Путь журчит вдали текстами, инициал
+    реторический собрал себя повстречался напоивший своего, толку проектах ручеек залетают семь большого великий оксмокс
+    сих дал, рыбного меня курсивных lorem букв ведущими точках домах! За буквенных, безопасную гор единственное,
+    несколько коварный он своих образ о агентство залетают строчка раз. Злых ведущими меня рукописи, даже толку
+    подзаголовок. Коварный речью грустный свое однажды взобравшись на берегу реторический, безорфографичный запятой
+    диких, имеет своего но ведущими гор о текстами скатился использовало всемогущая единственное! Коварных, текстов
+    скатился однажды рыбными, силуэт запятой но мир рекламных собрал знаках власти. Свое, раз? Имеет безорфографичный
+    пор, там ipsum залетают курсивных, жаренные ему буквоград семь букв предупреждал, большой несколько большого страну
+    образ даже! Подзаголовок, рыбными назад продолжил коварных предложения толку даль не родного наш подпоясал свой
+    послушавшись, пустился они буквенных семантика залетают. Последний текст деревни оксмокс буквенных, взгляд мир
+    реторический силуэт, там языкового, вершину домах даже одна безопасную ручеек рукописи гор рыбного коварных? Lorem
+    правилами послушавшись предупредила несколько рукопись, рыбными вопрос своего последний жаренные переписывается.
+    Составитель путь грамматики, решила алфавит города ее всеми сбить, мир там продолжил своих, заманивший жаренные
+    предупредила имени семантика подзаголовок агентство? Буквенных маленькая домах всемогущая за всеми несколько, речью
+    lorem пояс журчит эта. То, лучше языком. Гор маленькая сбить родного необходимыми свою переписывается дорогу она
+    предупреждал, последний не журчит правилами семь. Раз, скатился домах журчит заголовок жизни, родного, власти то
+    свой большой ты щеке снова она путь буквенных проектах. Лучше буквоград бросил, о ты грамматики пор решила несколько
+    родного продолжил собрал живет там которое снова запятых первую вдали пунктуация мир меня власти дал реторический
+    путь домах. Толку свою языком точках осталось что. Курсивных моей они речью букв рыбными заглавных снова деревни
+    буквенных?
+  </section>
+  <section class="section">
+    <div class="container beer-map">
+      <h2 class="beer-map__header header-text">
+        Торговые направления
+      </h2>
+      <div class="beer-map__swiper">
+        <ul class="beer-map__items swiper-wrapper">
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="0">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-1.jpg" alt="Разливное пиво">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Разливное пиво
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="1">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-2.jpg" alt="Бутылочное пиво">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Бутылочное пиво
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="2">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-3.jpg" alt="Крафтовое пиво">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Крафтовое пиво
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="3">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-4.jpg" alt="Баночное пиво">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Баночное пиво
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="4">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-5.jpg" alt="Квас, лимонад, вода">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Квас, лимонад, вода
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="5">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-6.jpg" alt="Сидр, медовуха, пуаре">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Сидр, медовуха, пуаре
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="beer-map__item swiper-slide">
+            <figure class="beer-map__card">
+              <a href="#" class="beer-map__link" data-namber-item="6">
+                <img class="beer-map__img" src="./img/beer-map/slider-cat-7.jpg" alt="Сопутствующие товары">
+              </a>
+              <figcaption class="beer-map__body">
+                <h3 class="beer-map__title">
+                  Сопутствующие товары
+                </h3>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <ul class="beer-map__tabs">
+        <li class="beer-map__tab activ" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/1/1.png" alt="">
+            <figcaption class="tab-card__title">Разливное пиво</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/1/2.png" alt="">
+            <figcaption class="tab-card__title">Разливное пиво</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/1/3.png" alt="">
+            <figcaption class="tab-card__title">Разливное пиво</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/1/4.png" alt="">
+            <figcaption class="tab-card__title">Разливное пиво</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/1/5.png" alt="">
+            <figcaption class="tab-card__title">Разливное пиво</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/2/1.png" alt="">
+            <figcaption class="tab-card__title">Пиво в бутылке</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/2/2.png" alt="">
+            <figcaption class="tab-card__title">Пиво в бутылке</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/2/3.png" alt="">
+            <figcaption class="tab-card__title">Пиво в бутылке</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/2/4.png" alt="">
+            <figcaption class="tab-card__title">Пиво в бутылке</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/2/5.png" alt="">
+            <figcaption class="tab-card__title">Пиво в бутылке</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-6.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/water.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-6.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/nost-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/water.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+        <li class="beer-map__tab" data-element-tab="">
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-1.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-2.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-3.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-4.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+          <figure class="tab-card">
+            <img class="tab-card__img" src="./img/beer-map/tab-card/4/kvas-5.png" alt="">
+            <figcaption class="tab-card__title">Квас</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section container points-sale">
+    <h2>points-sale</h2>
+    Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Если курсивных рукопись над
+    переписали живет ведущими, рекламных пояс на берегу домах образ ее толку продолжил родного запятой своих раз
+    осталось коварный свое? Встретил наш маленькая своих, продолжил вопрос скатился? Встретил, на берегу, эта знаках
+    вершину коварных последний послушавшись предупреждал ведущими предложения приставка, гор маленький всеми? Рот они
+    однажды всеми имеет на берегу все океана деревни имени скатился рукописи но своего переписывается собрал города
+    последний коварных, вскоре не, образ рыбными послушавшись пояс букв! Путь журчит вдали текстами, инициал
+    реторический собрал себя повстречался напоивший своего, толку проектах ручеек залетают семь большого великий оксмокс
+    сих дал, рыбного меня курсивных lorem букв ведущими точках домах! За буквенных, безопасную гор единственное,
+    несколько коварный он своих образ о агентство залетают строчка раз. Злых ведущими меня рукописи, даже толку
+    подзаголовок. Коварный речью грустный свое однажды взобравшись на берегу реторический, безорфографичный запятой
+    диких, имеет своего но ведущими гор о текстами скатился использовало всемогущая единственное! Коварных, текстов
+    скатился однажды рыбными, силуэт запятой но мир рекламных собрал знаках власти. Свое, раз? Имеет безорфографичный
+    пор, там ipsum залетают курсивных, жаренные ему буквоград семь букв предупреждал, большой несколько большого страну
+    образ даже! Подзаголовок, рыбными назад продолжил коварных предложения толку даль не родного наш подпоясал свой
+    послушавшись, пустился они буквенных семантика залетают. Последний текст деревни оксмокс буквенных, взгляд мир
+    реторический силуэт, там языкового, вершину домах даже одна безопасную ручеек рукописи гор рыбного коварных? Lorem
+    правилами послушавшись предупредила несколько рукопись, рыбными вопрос своего последний жаренные переписывается.
+    Составитель путь грамматики, решила алфавит города ее всеми сбить, мир там продолжил своих, заманивший жаренные
+    предупредила имени семантика подзаголовок агентство? Буквенных маленькая домах всемогущая за всеми несколько, речью
+    lorem пояс журчит эта. То, лучше языком. Гор маленькая сбить родного необходимыми свою переписывается дорогу она
+    предупреждал, последний не журчит правилами семь. Раз, скатился домах журчит заголовок жизни, родного, власти то
+    свой большой ты щеке снова она путь буквенных проектах. Лучше буквоград бросил, о ты грамматики пор решила несколько
+    родного продолжил собрал живет там которое снова запятых первую вдали пунктуация мир меня власти дал реторический
+    путь домах. Толку свою языком точках осталось что. Курсивных моей они речью букв рыбными заглавных снова деревни
+    буквенных?
+  </section>
+  <section class="section container feedback">
+    <h2>feedback</h2>
+    Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Если курсивных рукопись над
+    переписали живет ведущими, рекламных пояс на берегу домах образ ее толку продолжил родного запятой своих раз
+    осталось коварный свое? Встретил наш маленькая своих, продолжил вопрос скатился? Встретил, на берегу, эта знаках
+    вершину коварных последний послушавшись предупреждал ведущими предложения приставка, гор маленький всеми? Рот они
+    однажды всеми имеет на берегу все океана деревни имени скатился рукописи но своего переписывается собрал города
+    последний коварных, вскоре не, образ рыбными послушавшись пояс букв! Путь журчит вдали текстами, инициал
+    реторический собрал себя повстречался напоивший своего, толку проектах ручеек залетают семь большого великий оксмокс
+    сих дал, рыбного меня курсивных lorem букв ведущими точках домах! За буквенных, безопасную гор единственное,
+    несколько коварный он своих образ о агентство залетают строчка раз. Злых ведущими меня рукописи, даже толку
+    подзаголовок. Коварный речью грустный свое однажды взобравшись на берегу реторический, безорфографичный запятой
+    диких, имеет своего но ведущими гор о текстами скатился использовало всемогущая единственное! Коварных, текстов
+    скатился однажды рыбными, силуэт запятой но мир рекламных собрал знаках власти. Свое, раз? Имеет безорфографичный
+    пор, там ipsum залетают курсивных, жаренные ему буквоград семь букв предупреждал, большой несколько большого страну
+    образ даже! Подзаголовок, рыбными назад продолжил коварных предложения толку даль не родного наш подпоясал свой
+    послушавшись, пустился они буквенных семантика залетают. Последний текст деревни оксмокс буквенных, взгляд мир
+    реторический силуэт, там языкового, вершину домах даже одна безопасную ручеек рукописи гор рыбного коварных? Lorem
+    правилами послушавшись предупредила несколько рукопись, рыбными вопрос своего последний жаренные переписывается.
+    Составитель путь грамматики, решила алфавит города ее всеми сбить, мир там продолжил своих, заманивший жаренные
+    предупредила имени семантика подзаголовок агентство? Буквенных маленькая домах всемогущая за всеми несколько, речью
+    lorem пояс журчит эта. То, лучше языком. Гор маленькая сбить родного необходимыми свою переписывается дорогу она
+    предупреждал, последний не журчит правилами семь. Раз, скатился домах журчит заголовок жизни, родного, власти то
+    свой большой ты щеке снова она путь буквенных проектах. Лучше буквоград бросил, о ты грамматики пор решила несколько
+    родного продолжил собрал живет там которое снова запятых первую вдали пунктуация мир меня власти дал реторический
+    путь домах. Толку свою языком точках осталось что. Курсивных моей они речью букв рыбными заглавных снова деревни
+    буквенных?
+  </section>
+  <section class="section container contacts">
+    <h2>contacts</h2>
+    Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Если курсивных рукопись над
+    переписали живет ведущими, рекламных пояс на берегу домах образ ее толку продолжил родного запятой своих раз
+    осталось коварный свое? Встретил наш маленькая своих, продолжил вопрос скатился? Встретил, на берегу, эта знаках
+    вершину коварных последний послушавшись предупреждал ведущими предложения приставка, гор маленький всеми? Рот они
+    однажды всеми имеет на берегу все океана деревни имени скатился рукописи но своего переписывается собрал города
+    последний коварных, вскоре не, образ рыбными послушавшись пояс букв! Путь журчит вдали текстами, инициал
+    реторический собрал себя повстречался напоивший своего, толку проектах ручеек залетают семь большого великий оксмокс
+    сих дал, рыбного меня курсивных lorem букв ведущими точках домах! За буквенных, безопасную гор единственное,
+    несколько коварный он своих образ о агентство залетают строчка раз. Злых ведущими меня рукописи, даже толку
+    подзаголовок. Коварный речью грустный свое однажды взобравшись на берегу реторический, безорфографичный запятой
+    диких, имеет своего но ведущими гор о текстами скатился использовало всемогущая единственное! Коварных, текстов
+    скатился однажды рыбными, силуэт запятой но мир рекламных собрал знаках власти. Свое, раз? Имеет безорфографичный
+    пор, там ipsum залетают курсивных, жаренные ему буквоград семь букв предупреждал, большой несколько большого страну
+    образ даже! Подзаголовок, рыбными назад продолжил коварных предложения толку даль не родного наш подпоясал свой
+    послушавшись, пустился они буквенных семантика залетают. Последний текст деревни оксмокс буквенных, взгляд мир
+    реторический силуэт, там языкового, вершину домах даже одна безопасную ручеек рукописи гор рыбного коварных? Lorem
+    правилами послушавшись предупредила несколько рукопись, рыбными вопрос своего последний жаренные переписывается.
+    Составитель путь грамматики, решила алфавит города ее всеми сбить, мир там продолжил своих, заманивший жаренные
+    предупредила имени семантика подзаголовок агентство? Буквенных маленькая домах всемогущая за всеми несколько, речью
+    lorem пояс журчит эта. То, лучше языком. Гор маленькая сбить родного необходимыми свою переписывается дорогу она
+    предупреждал, последний не журчит правилами семь. Раз, скатился домах журчит заголовок жизни, родного, власти то
+    свой большой ты щеке снова она путь буквенных проектах. Лучше буквоград бросил, о ты грамматики пор решила несколько
+    родного продолжил собрал живет там которое снова запятых первую вдали пунктуация мир меня власти дал реторический
+    путь домах. Толку свою языком точках осталось что. Курсивных моей они речью букв рыбными заглавных снова деревни
+    буквенных?
+  </section>
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__logo">
+        <a class="footer-logo__link" href="#" data-goto=".hero">
+          <svg class="footer-logo__img" viewBox="0 0 100 141">
+            <use xlink:href="./img/sprites.svg#footer-logo"></use>
+          </svg>
+        </a>
+      </div>
+      <ul class="footer__social-net social-net">
+        <li class="social-net__item">
+          <a class="social-net__link" href="#" target="_self">
+            <svg class="social-net__icon" width="26" height="26" viewBox="0 0 26 26">
+              <use xlink:href="./img/sprites.svg#vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-net__item">
+          <a class="social-net__link" href="#" target="_self">
+            <svg class="social-net__icon" width="26" height="26" viewBox="0 0 26 26">
+              <use xlink:href="./img/sprites.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-net__item">
+          <a class="social-net__link" href="#" target="_self">
+            <svg class="social-net__icon" width="26" height="26" viewBox="0 0 26 26">
+              <use xlink:href="./img/sprites.svg#fb"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div></div>
+    <div></div>
+
+    <div class="info">
+      <!-- <div class="info__text container">ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ ПИВА ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ</div> -->
+      <div class="info__text">ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ ПИВА ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ</div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

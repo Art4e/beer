@@ -1,5 +1,5 @@
 # Игнорировать каталог node_modules 
-*source/**/*.*
+/#source/**/*.*
 # 06_bundlers/node_modules/**/*.*
 /node_modules/*
 /build/*

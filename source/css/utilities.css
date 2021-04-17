@@ -1,0 +1,101 @@
+/* .scroll-off {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+}
+
+.scroll-on {
+  position: fixed;
+  left: 30px;
+  top: 60px;
+  pointer-events: none;
+} */
+
+.disable-scroll {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Стили модального окна */
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal {
+  background-color: var(--brand-color-light-orange);
+  /* width: 300px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.modal-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+  display: block;
+}
+
+.modal__logo {
+  width: 280px;
+}
+.modal__img {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.modal__text {
+  user-select: none;
+  text-align: center;
+  /* font-size: 2.4rem; */
+  font-weight: 700;
+  color: var(--brand-color-black);
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+.modal__btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+.modal__link {
+  width: 40%;
+  padding: 10px 0;
+  border: 2px solid var(--brand-color-brown);
+  background-color: var(--brand-color-brown);
+  text-align: center;
+  color: var(--color-first);
+}
+.modal__link:hover {
+  border: 2px solid var(--brand-color-black);
+}

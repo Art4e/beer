@@ -1,0 +1,128 @@
+:root {
+  --width-plying-field: 60vw;
+  --height-plying-field: 80vh;
+  --cards-line: 4;
+}
+
+.beer-map {
+  min-width: 0;
+  background: url("../img/beer-map/bg.svg") 50% 100% repeat-x;
+  background-color: var(--brand-color-light-orange);
+}
+.beer-map__swiper {
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+.beer-map__items {
+  display: flex;
+}
+.beer-map__item {
+  list-style: none;
+}
+.beer-map__card {
+  position: relative;
+  background-color: var(--color-first);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+.beer-map__link {
+}
+
+.beer-map__link::after {
+  position: absolute;
+  z-index: 10;
+  content: "";
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* .beer-map__link:hover::after {
+  border: 1px solid black;
+} */
+
+.beer-map__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.beer-map__body {
+  position: relative;
+}
+.beer-map__body::after {
+  position: absolute;
+  content: "";
+  bottom: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-first);
+  border-radius: 50%;
+}
+.beer-map__body::before {
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  content: "";
+  bottom: 100%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 30% 20%;
+  border-right: 5px solid var(--brand-color-light-orange);
+  border-bottom: 5px solid var(--brand-color-light-orange);
+  transform-origin: center;
+  transform: translateX(-50%) rotate(45deg);
+  transition: bottom 0.3s ease-out;
+}
+
+.beer-map__body:hover::before,
+.beer-map__link:hover ~ .beer-map__body::before {
+  bottom: 85%;
+}
+.beer-map__title {
+  padding: 20px 10px;
+  text-align: center;
+}
+.beer-map__tabs {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.beer-map__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  /* border: 1px solid black; */
+  transition: opacity 0.9s ease-out 0.3s;
+}
+.beer-map__tab.activ {
+  width: 100%;
+  height: auto;
+  /* background-color: var(--brand-color-light-orange); */
+  opacity: 1;
+}
+.tab-card {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.tab-card__title {
+  font-style: 18px;
+}
+.tab-card__img,
+.tab-card__title {
+  display: none;
+  padding-bottom: 10px;
+}
+.beer-map__tab.activ .tab-card__title,
+.beer-map__tab.activ .tab-card__img {
+  display: block;
+}

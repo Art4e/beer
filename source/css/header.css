@@ -1,0 +1,206 @@
+:root {
+  --logo-fil0: #fefefe;
+  --logo-fil1: #fcc86e;
+  --logo-fil2: #9d9e9e;
+  --logo-fil3: #fefefe;
+  --logo-fil4: #853f1e;
+  --logo-fil5: #252322;
+  --logo-fil6: #f39314;
+  --height-header: 100px;
+  --header-before-bg-color: rgba(0, 0, 0, 0.25);
+}
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  height: calc(2 * var(--height-header));
+  width: 100vw;
+  color: var(--color-first);
+  transition: transform 0.7s ease;
+}
+.header._min {
+  transform: translateY(-50%);
+  background-color: var(--brand-color-brown);
+  opacity: 0.9;
+  transition: transform 0.7s ease;
+}
+.header::before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 0.5s ease-out 0s;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.header.scroll::before {
+  transition: background 0.5s ease-out 0s;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.header.scroll._min::before {
+  transition: background 0.5s ease-out 0s;
+  background-color: var(--brand-color-light-orange);
+}
+.header__logo {
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-19%, -60%);
+}
+.logo__link {
+  display: block;
+}
+.logo__link::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+.logo__img {
+  cursor: pointer;
+  width: calc(3 * var(--height-header));
+  transition: transform 0.7s ease;
+}
+.header._min .logo__img {
+  --logo-fil0: #000;
+  transform: scale(0.5) translateY(100%);
+  transition: transform 0.7s ease;
+}
+.header__menu {
+  position: relative;
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  height: calc(2 * var(--height-header));
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header__social-net {
+}
+.social-net {
+  display: flex;
+}
+.social-net__item:not(:last-child) {
+  margin-right: 10%;
+}
+.social-net__item {
+}
+.social-net__link {
+}
+.social-net__icon {
+  width: 50px;
+  fill: var(--brand-color-light-orange);
+  transition: fill 0.4s ease;
+}
+.social-net__icon:hover {
+  fill: var(--brand-color-brown);
+}
+.header__contacts {
+}
+.header__tel-link {
+  font-size: 5rem;
+  color: inherit;
+  transition: color 0.4s ease-out 0s;
+}
+.header__tel-link:hover {
+  color: var(--brand-color-light-orange);
+}
+.header__nav {
+  flex: 1 1 100%;
+}
+.header__items {
+  display: flex;
+  justify-content: center;
+  font-size: 3.4rem;
+}
+.header__item {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  cursor: pointer;
+  border-top: 1px solid var(--brand-color-light-orange);
+  transition: color 0.4s ease-out 0s, border 0.4s ease 0.2s;
+}
+.header__item:hover {
+  border-top: 1px solid var(--brand-color-brown);
+  color: var(--brand-color-light-orange);
+}
+.header__item_spaсe {
+  width: 1px;
+  margin: auto;
+  border-top: none;
+}
+.header__item:nth-child(3) {
+}
+.header__link {
+  color: inherit;
+  transition: color 0.4s ease-out 0s;
+}
+.header._min .header__link {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.header__burger {
+  display: none;
+  z-index: 20;
+  background-color: transparent;
+  width: 30px;
+  height: 50px;
+}
+
+.burger__body {
+  display: block;
+  position: relative;
+  margin: 14px 0 33px;
+}
+
+.burger__body:before,
+.burger__body,
+.burger__body:after {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  transition: background 0.4s ease-in-out;
+}
+
+.burger__body:before,
+.burger__body:after {
+  position: absolute;
+  content: "";
+  right: 0;
+}
+
+.burger__body:before {
+  top: 10px;
+}
+
+.burger__body:after {
+  top: 20px;
+}
+
+.header__burger:hover .burger__body:before,
+.header__burger:hover .burger__body,
+.header__burger:hover .burger__body:after,
+.header__burger.activ .burger__body:before,
+.header__burger.activ .burger__body,
+.header__burger.activ .burger__body:after {
+  background: var(--brand-color-light-orange);
+}
+
+.header__burger:hover .burger__body:before,
+.header__burger.activ .burger__body:before {
+  width: 80%;
+}
+
+.header__burger:hover .burger__body:after,
+.header__burger.activ .burger__body:after {
+  width: 60%;
+}
