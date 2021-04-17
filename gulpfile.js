@@ -6,11 +6,11 @@ const gulpCli = require(`gulp-cli`)
 const gulpif = require('gulp-if');
 const argv = require('yargs').argv;
 
-// -------- Удаление
+// -------- Удаление, cоединить, переименовать файлы
 const del = require(`del`)
-// -------- Соединение файлов
 const concat = require(`gulp-concat`)
 const rigger = require(`gulp-rigger`)
+const rename = require(`gulp-rename`);
 
 // -------- Обработка css 
 const autoPrefixer = require(`gulp-autoprefixer`)
@@ -32,7 +32,6 @@ const replace = require('gulp-replace')
 const image = require(`gulp-image`)
 const webp = require(`gulp-webp`);
 
-// const rigger = require(`gulp-rigger`)
 
 // -------- Babel обработка JS
 const babel = require(`gulp-babel`)
@@ -47,16 +46,11 @@ const path = {
   source: { //Пути откуда брать исходники
     html: `source/*.html`, //Синтаксис source/*.html говорит gulp что мы хотим взять все файлы с расширением .html
     scripts: `source/js/index.js`,//В стилях и скриптах нам понадобятся только main файлы
-    style: [
-      `source/css/index.css`,
-      `source/css/media.css`
-    ],
+    style: `source/css/index.css`,
     img: [
-      `source/img/**/*.png`,
-      `source/img/**/*.jpg`,
-      `source/img/**/*.jpeg`,
-      `source/img/*.svg`
-    ], //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+      `source/img/**/*.+(png|jpg|jpeg|svg)`,
+      `!source/img/svg/**`
+    ],
     webp: `source/img/**/*.webp`,
     svg: `source/img/svg/*.svg`,
     fonts: `source/fonts/**/*.*`
@@ -110,17 +104,16 @@ const htmlMinify = () => {
 // -------- Обработка стилей
 const styles = () => {
   return src(path.source.style)
-    // .pipe(gulpif(!argv.build, sourceMaps.init()))
-    .pipe(gulpif(path.source.style[0], rigger()))
-    // .pipe(rigger())
-    .pipe(concat('main.css'))
+    .pipe(gulpif(!argv.build, sourceMaps.init()))
+    .pipe(rigger())
     .pipe(autoPrefixer({
       cascade: false
     }))
     .pipe(gulpif(argv.build, cleanCss({
       level: 2
     })))
-    // .pipe(gulpif(!argv.build, sourceMaps.write()))
+    .pipe(gulpif(!argv.build, sourceMaps.write()))
+    // .pipe(gulpif(argv.build, rename({ suffix: '.min' })))// Сборка build - добавляем суффикс .min
     .pipe(gulpif(argv.build, dest(path.build.style), dest(path.dev.style)))
     .pipe(browserSync.stream())
 }
@@ -131,7 +124,7 @@ const scripts = () => {
     .pipe(gulpif(!argv.build, sourceMaps.init()))
     .pipe(rigger())
     .pipe(babel({
-      presets: [`@babel/env`]
+      presets: [ `@babel/env` ]
     }))
     .pipe(gulpif(argv.build, uglify().on(`error`, notify.onError())))
     .pipe(gulpif(!argv.build, sourceMaps.write()))
@@ -160,7 +153,7 @@ const svgSpriteBuild = () => {
     // -------- Удаление аттрибутов из svg файлов для обращения к ним из css
     .pipe(cheerio({
       run: function ($) {
-        $('[fill]').removeAttr('fill');
+        // $('[fill]').removeAttr('fill');
         $('[stroke]').removeAttr('stroke');
         $('[style]').removeAttr('style');
       },
@@ -194,10 +187,14 @@ const webps = () => {
     .pipe(webp())
     .pipe(gulpif(argv.build, dest(path.build.img), dest(path.dev.img)))
 }
+const icons = () => {
+  return src(`source/favicon.ico`)
+    .pipe(gulpif(argv.build, dest(path.build.html), dest(path.dev.html)))
+}
 
 // -------- Удаляем папки dev и build прежде чесм собрать обновлённую сборку
 const delAll = () => {
-  return del([path.clean.dev, path.clean.build])
+  return del([ path.clean.dev, path.clean.build ])
 }
 
 // -------- Следим за изменениями в файлах
@@ -209,4 +206,4 @@ watch(path.watch.fonts, fontsAll)
 
 // --------  Сборка по умолчанию dev, запуск - gulp 
 // --------  Сборка по build, запуск - gulp --build
-exports.default = series(delAll, fontsAll, htmlMinify, styles, svgSpriteBuild, images, webps, scripts, watchFailes)
+exports.default = series(delAll, fontsAll, htmlMinify, styles, svgSpriteBuild, images, webps, icons, scripts, watchFailes)

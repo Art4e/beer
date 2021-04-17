@@ -6,7 +6,6 @@
 
 /*= include/wave-style.css */
 
-
 @font-face {
   font-family: "PTsans_narrow";
   src: local("PT Sans Narrow"), local("PT-Sans-Narrow "), url("../fonts/ptsans-narrow-webfont.woff2") format("woff2"),
@@ -298,7 +297,6 @@ body {
   padding-bottom: 15px;
 }
 
-
 /*= include/header.css */
 
 /*= include/hero.css*/
@@ -308,4 +306,3 @@ body {
 /*= include/footer.css*/
 
 /*= include/media.css*/
-

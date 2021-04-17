@@ -19,9 +19,9 @@
     font-size: calc(1.12vw + 12.571px);
   }
   .hero__container {
-    margin-top:  calc(var(--height-header) + var(--padding-container));
+    margin-top: calc(var(--height-header) + var(--padding-container));
   }
-  .hero__header, 
+  .hero__header,
   .hero__text {
     padding-bottom: calc(1.74vw + 6.6667px);
   }
@@ -55,7 +55,7 @@
   .hero__link .btn-wave {
     font-size: 1.6rem;
   }
-
+}
 @media (max-width: 800px) {
   :root {
     --height-header: calc(14.29vw - 14.286px);
@@ -99,7 +99,7 @@
   .header__items {
     font-size: 2.15rem;
   }
-  
+
   .header__logo {
     position: relative;
     top: 0;
@@ -117,7 +117,7 @@
   }
   .header__menu {
     height: auto;
-    position:static;
+    position: static;
   }
   .header__social-net,
   .header__nav {
@@ -127,13 +127,13 @@
     width: 50vw;
     height: calc(100vh - var(--height-header));
     padding-bottom: 30px;
-    transition: transform 0.6s ease-in-out, opacity 0.3s ease-out 0.3s ;
+    transition: transform 0.6s ease-in-out, opacity 0.3s ease-out 0.3s;
     transform: scale(1, 0);
   }
   .header__menu.activ .header__social-net,
   .header__menu.activ .header__nav {
     opacity: 1;
-    transition: transform 0.3s ease-in-out 0.3s, opacity 0.5s ease-out  ;
+    transition: transform 0.3s ease-in-out 0.3s, opacity 0.5s ease-out;
     transform: scale(1, 1);
   }
   .header__social-net {
@@ -204,7 +204,7 @@
   .swiper-button-next {
     right: calc(15.38vw - 44.231px);
   }
-  .swiper-button-prev::after ,
+  .swiper-button-prev::after,
   .swiper-button-next::after {
     font-size: calc(18.46vw - 39.077px);
   }
@@ -218,5 +218,4 @@
   .header__tel-link {
     font-size: calc(7.69vw - 10.615px);
   }
-  
 }
